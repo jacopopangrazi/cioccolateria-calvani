@@ -158,10 +158,8 @@ async function loadInstagramFeed() {
             
             feedContainer.appendChild(postElement);
             
-            // Animazione più fluida
-            setTimeout(() => {
-                postElement.classList.add('fade-in-up');
-            }, index * 80);
+            // Osserva il nuovo elemento per l'animazione
+            observer.observe(postElement);
         });
         
         // Aggiungi pannello di configurazione se l'API non è configurata
@@ -195,21 +193,33 @@ async function loadInstagramFeed() {
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-up');
+        if (entry.isIntersecting && !entry.target.classList.contains('fade-in-up')) {
+            // Aggiungi un piccolo delay per prevenire conflitti
+            setTimeout(() => {
+                entry.target.classList.add('fade-in-up');
+            }, 50);
+            // Smetti di osservare questo elemento
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
+// Funzione per osservare nuovi elementi dinamici
+function observeElement(element) {
+    if (element && observer) {
+        observer.observe(element);
+    }
+}
+
 // Osserva gli elementi per le animazioni
 document.addEventListener('DOMContentLoaded', function() {
-    const elementsToAnimate = document.querySelectorAll('.specialty-card, .contact-item, .instagram-post');
+    const elementsToAnimate = document.querySelectorAll('.specialty-card, .contact-item');
     elementsToAnimate.forEach(el => observer.observe(el));
 });
 
@@ -357,20 +367,8 @@ window.addEventListener('scroll', throttle(function() {
 }, 16)); // ~60fps
 
 // ===== FORM VALIDATION & INTERACTIONS =====
-// Aggiungi effetti hover personalizzati
+// Effetti hover gestiti completamente tramite CSS
 document.addEventListener('DOMContentLoaded', function() {
-    // Effetto hover per le card delle specialità
-    const specialtyCards = document.querySelectorAll('.specialty-card');
-    specialtyCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-    
     // Effetto click per i bottoni
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {

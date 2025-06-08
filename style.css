@@ -341,10 +341,17 @@ h1, h2, h3, h4 {
     box-shadow: var(--shadow-light);
     transition: all 0.3s ease;
     position: relative;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-.specialty-card:hover {
-    transform: translateY(-10px);
+.specialty-card.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.specialty-card.fade-in-up:hover {
+    transform: translateY(-10px) scale(1.02);
     box-shadow: var(--shadow-heavy);
 }
 
@@ -366,7 +373,7 @@ h1, h2, h3, h4 {
     transition: transform 0.3s ease;
 }
 
-.specialty-card:hover .card-image img {
+.specialty-card.fade-in-up:hover .card-image img {
     transform: scale(1.05);
 }
 
@@ -409,7 +416,7 @@ h1, h2, h3, h4 {
     transition: opacity 0.3s ease;
 }
 
-.specialty-card:hover .card-overlay {
+.specialty-card.fade-in-up:hover .card-overlay {
     opacity: 1;
 }
 
@@ -545,10 +552,17 @@ h1, h2, h3, h4 {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-light);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-.instagram-post:hover {
+.instagram-post.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.instagram-post.fade-in-up:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-medium);
 }
@@ -638,6 +652,14 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.contact-item.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .contact-icon {
@@ -948,6 +970,17 @@ h1, h2, h3, h4 {
         gap: 2rem;
     }
     
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .contact-text {
+        text-align: center;
+    }
+    
     .contact-map {
         height: 300px;
     }
@@ -985,19 +1018,8 @@ h1, h2, h3, h4 {
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+    transition: all 0.6s ease-out;
 }
 
 /* Smooth scrolling offset for fixed header */
