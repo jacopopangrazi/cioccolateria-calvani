@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cioccolateria Calvani - Terni | Cioccolato Artigianale & Gelato</title>
+    <meta name="description" content="Cioccolateria Calvani a Terni - Cioccolato artigianale, gelato, caffetteria e aperitivi. Via del Tribunale 33, tel. 0744 1971879">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/logo.png" alt="Cioccolateria Calvani" class="logo">
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#specialita" class="nav-link">Specialità</a>
+                    <a href="#instagram" class="nav-link">Instagram</a>
+                    <a href="#contatti" class="nav-link">Contatti</a>
+                </div>
+                
+                <div class="nav-contact">
+                    <a href="tel:07441971879" class="contact-btn">
+                        <i class="fas fa-phone"></i>
+                        <span>0744 1971879</span>
+                    </a>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="hero-subtitle">Benvenuti alla</span>
+                    Cioccolateria Calvani
+                </h1>
+                <p class="hero-description">
+                    Dal cuore di Terni, creiamo esperienze di gusto uniche con cioccolato artigianale, 
+                    gelato cremoso e specialità che raccontano la passione per l'arte dolciaria.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#specialita" class="btn btn-primary">Scopri le nostre specialità</a>
+                    <a href="#contatti" class="btn btn-secondary">Vieni a trovarci</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Specialità Section -->
+    <section id="specialita" class="specialties">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Le Nostre Specialità</h2>
+                <p class="section-subtitle">Ogni creazione racconta una storia di passione e tradizione</p>
+            </div>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="card-image">
+                        <img src="assets/WhatsApp-Image-2021-12-05-at-14.21.43-2-300x300.jpeg" alt="Dubai Chocolate">
+                        <div class="card-overlay">
+                            <div class="card-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Dubai Chocolate</h3>
+                        <p class="card-description">
+                            La viralissima Dubai Chocolate! Un cuore croccante di pistacchio e kataifi 
+                            ricoperto da cioccolato fondente o al latte.
+                        </p>
+                        <div class="card-badge">Novità</div>
+                    </div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="card-image">
+                        <img src="assets/colazionebox-444x444.jpg" alt="Colazione Box">
+                        <div class="card-overlay">
+                            <div class="card-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Colazione da Asporto</h3>
+                        <p class="card-description">
+                            La nostra selezione per iniziare la giornata nel modo giusto, 
+                            con prodotti freschi e di qualità.
+                        </p>
+                        <div class="card-badge">Box</div>
+                    </div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="card-image">
+                        <img src="assets/tetisane-300x300_.png" alt="Tè e Tisane">
+                        <div class="card-overlay">
+                            <div class="card-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Tè e Tisane</h3>
+                        <p class="card-description">
+                            Una selezione curata di tè pregiati e tisane aromatiche 
+                            per momenti di puro relax e benessere.
+                        </p>
+                        <div class="card-badge">Collezione</div>
+                    </div>
+                </div>
+
+                <div class="specialty-card featured">
+                    <div class="card-image">
+                        <div class="placeholder-image cacao-image">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cacao Grand Cru Perù</h3>
+                        <p class="card-description">
+                            Dalla zona di Bagua, un cacao "primitivo" del 3000 A.C., 
+                            coltivato dalle comunità native amazzoniche per un cioccolato esclusivo.
+                        </p>
+                        <div class="card-badge grand-cru">Grand Cru</div>
+                    </div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="card-image">
+                        <div class="placeholder-image gelato-image">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Gelato Artigianale</h3>
+                        <p class="card-description">
+                            Dalla fava di cacao al cono: il nostro gelato è un viaggio nel gusto autentico, 
+                            ogni cucchiaino racchiude l'intensità di una tavoletta.
+                        </p>
+                        <div class="card-badge">Artigianale</div>
+                    </div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="card-image">
+                        <div class="placeholder-image aperitivo-image">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-icon">
+                                <i class="fas fa-glass-cheers"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Aperitivi & Live Music</h3>
+                        <p class="card-description">
+                            Serate speciali davanti al Verdi con aperitivi gourmet 
+                            e musica dal vivo per momenti indimenticabili.
+                        </p>
+                        <div class="card-badge">Eventi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section id="instagram" class="instagram-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Seguici su Instagram</h2>
+                <p class="section-subtitle">Le nostre ultime creazioni e novità</p>
+                <a href="https://www.instagram.com/cioccolateria_calvani/" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                    @cioccolateria_calvani
+                </a>
+            </div>
+            
+            <div class="instagram-feed" id="instagram-feed">
+                <div class="feed-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Caricamento post Instagram...</p>
+                </div>
+            </div>
+            
+            <div class="instagram-cta">
+                <a href="https://www.instagram.com/cioccolateria_calvani/" target="_blank" class="btn btn-instagram">
+                    <i class="fab fa-instagram"></i>
+                    Seguici su Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti Section -->
+    <section id="contatti" class="contacts">
+        <div class="container">
+            <div class="contacts-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Vieni a Trovarci</h2>
+                    <p class="section-subtitle">Ti aspettiamo per un'esperienza di gusto unica</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Indirizzo</h4>
+                                <p>Via del Tribunale 33<br>Angolo Corso Vecchio 114<br>Terni, Umbria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telefono</h4>
+                                <a href="tel:07441971879">0744 1971879</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Orari</h4>
+                                <p>Lun-Sab: 8:00 - 20:00<br>Domenica: 9:00 - 13:00 / 16:00 - 20:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Social</h4>
+                                <a href="https://www.instagram.com/cioccolateria_calvani/" target="_blank">@cioccolateria_calvani</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <div id="map" style="height: 400px; border-radius: 15px; overflow: hidden;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Cioccolateria Calvani" class="footer-logo-img">
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#specialita">Specialità</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#contatti">Contatti</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone"></i> 0744 1971879</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Via del Tribunale 33, Terni</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cioccolateria Calvani. P.IVA 01573970553</p>
+                <p>Sito realizzato con ❤️ per la passione del cioccolato</p>
+            </div>
+        </div>
+    </footer>
+
+          <!-- Scripts -->
+      <!-- Leaflet JS -->
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+      
+      <script src="script.js"></script>
+      <script src="instagram-api.js"></script>
+</body>
+</html> 
