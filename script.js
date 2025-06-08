@@ -191,19 +191,7 @@ async function loadInstagramFeed() {
 }
 
 // ===== ANIMATIONS ON SCROLL =====
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.specialty-card, .contact-item');
-    const windowHeight = window.innerHeight;
-    
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('fade-in-up');
-        }
-    });
-}
+// Animazioni gestite dall'IntersectionObserver sottostante
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 const observerOptions = {
@@ -274,7 +262,7 @@ function initializeLeafletMap() {
             <h3><i class="fas fa-chocolate-bar"></i> Cioccolateria Calvani</h3>
             <p><i class="fas fa-map-marker-alt"></i> Via del Tribunale 33<br>Angolo Corso Vecchio 114, Terni</p>
             <p><i class="fas fa-phone"></i> <a href="tel:07441971879">0744 1971879</a></p>
-            <p><i class="fas fa-clock"></i> Lun-Sab: 8:00-20:00</p>
+            <p><i class="fas fa-clock"></i> Lun-Sab: 8:00-13:00, 15:30-20:00<br>Dom: 16:00-20:00</p>
             <div class="popup-buttons">
                 <a href="https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}" 
                    target="_blank" class="btn-popup">
@@ -330,13 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeMap();
     }
     
-    // Aggiungi listener per lo scroll
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Inizializza le animazioni per gli elementi già visibili
-    setTimeout(() => {
-        animateOnScroll();
-    }, 100);
+    // Animazioni gestite automaticamente dall'IntersectionObserver
     
     // Test caricamento immagini
     const testImage = new Image();

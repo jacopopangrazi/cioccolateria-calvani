@@ -114,9 +114,9 @@ Serate speciali davanti al Teatro Verdi con aperitivi gourmet e musica dal vivo.
 - **📍 Indirizzo:** Via del Tribunale 33, Angolo Corso Vecchio 114, Terni (TR)
 - **📞 Telefono:** [0744 1971879](tel:07441971879)
 - **📧 Social:** [@cioccolateria_calvani](https://www.instagram.com/cioccolateria_calvani/)
-- **🕒 Orari:** 
-  - Lun-Sab: 8:00 - 20:00
-  - Domenica: 9:00 - 13:00 / 16:00 - 20:00
+- **🕒 Orari:**
+    - Lun-Sab: 8:00-13:00, 15:30-20:00
+  - Dom: 16:00-20:00
 
 ## 🔧 Funzionalità Tecniche
 
